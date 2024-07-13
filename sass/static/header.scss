@@ -6,7 +6,11 @@
     background-color: transparent;
     z-index: 1000;
     transition: 1s;
-
+    .current-menu-item{
+        a{
+            color: $third-color !important;
+        }
+    }
     &.active {
         background-color: #fff;
         opacity: .8;
@@ -19,6 +23,11 @@
 
         .nav_list {
             .nav-link {
+                color: $primary-color;
+                font-size: 16px;
+            }
+
+            .products {
                 color: $primary-color;
                 font-size: 16px;
             }
@@ -132,6 +141,7 @@
                     .sub-menu {
                         visibility: visible;
                         opacity: 1;
+                        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
                     }
                 }
 
@@ -146,8 +156,8 @@
 
                 i {
                     color: #fff;
-                    font-size: 20px;
                     font-weight: bold;
+                    margin-left: 3px;
                 }
 
                 .sub-menu {
@@ -183,6 +193,62 @@
                 }
             }
 
+            .products {
+                position: relative;
+                color: hsl(0deg, 0%, 100%);
+                font-weight: 700;
+                font-size: 16px;
+                padding: 8px 5px;
+                transition: 0.5s;
+                &.current-menu-item{
+                    color: $third-color !important;
+                }
+                &:hover {
+                    color: $third-color;
+                    cursor: pointer;
+
+                    .sub-menu {
+                        opacity: 1;
+                        visibility: visible;
+                        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                    }
+                }
+
+                i {
+                    margin-left: 3px;
+                }
+
+                .sub-menu {
+                    opacity: 0;
+                    visibility: hidden;
+                    position: absolute;
+                    top: 35px;
+                    left: -10px;
+                    background-color: #fff;
+                    padding: 15px 30px;
+                    border-radius: 5px;
+                    z-index: 100;
+                    min-width: 180px;
+                    transition: visibility 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+                    li {
+
+                        &:not(:last-child) {
+                            margin-bottom: 20px;
+                        }
+
+                        a {
+                            color: $primary-color !important;
+                            font-weight: 500;
+                            transition: .5s;
+
+                            &:hover {
+                                color: $third-color !important;
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         @media (max-width:992px) {
@@ -207,26 +273,37 @@
     }
 }
 
-#header{
-    .nav_list{
-        .nav-link{
+#header {
+    .nav_list {
+        .products {
             color: $primary-color;
-            
-            &:hover{
+
+            &:hover {
                 color: $third-color;
             }
         }
-        .flags{
-            i{
+
+        .nav-link {
+            color: $primary-color;
+
+            &:hover {
+                color: $third-color;
+            }
+        }
+
+        .flags {
+            i {
                 color: $primary-color;
+                margin-left: 3px;
             }
         }
     }
-    .nav-toggle{
+
+    .nav-toggle {
         color: $primary-color;
     }
-    .nav-close{
+
+    .nav-close {
         color: $primary-color;
     }
 }
-

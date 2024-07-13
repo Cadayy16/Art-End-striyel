@@ -1951,6 +1951,80 @@ form:invalid button[type=submit] {
   line-height: 25px;
 }
 
+.products-detail {
+  padding: 100px 0;
+}
+.products-detail .container {
+  max-width: 1600px;
+}
+.products-detail .container .title {
+  margin-bottom: 50px;
+  text-align: center;
+}
+.products-detail .container .title h4 {
+  font-size: 40px;
+  font-weight: bold;
+  color: #40c0c9;
+}
+.products-detail .container .nav {
+  height: inherit;
+  margin-bottom: 50px;
+}
+.products-detail .container .nav.nav-tabs {
+  border: none;
+  gap: 30px;
+  justify-content: center;
+}
+.products-detail .container .nav.nav-tabs .nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 250px;
+}
+@media (max-width: 1150px) {
+  .products-detail .container .nav.nav-tabs .nav-item {
+    min-width: inherit;
+    display: block;
+  }
+}
+.products-detail .container .nav.nav-tabs .nav-item .nav-link {
+  border: 1px solid #364e68;
+  border-radius: 20px;
+  padding: 10px 45px;
+  color: #fff;
+  font-size: 16px;
+  transition: 0.5s;
+  margin-bottom: 20px;
+  background-color: #364e68;
+}
+.products-detail .container .nav.nav-tabs .nav-item .nav-link.active {
+  background-color: #40c0c9;
+  border: 1px solid #40c0c9;
+}
+@media (max-width: 1150px) {
+  .products-detail .container .nav.nav-tabs .nav-item .nav-link {
+    font-size: 12px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+}
+.products-detail .container .tab-content .products-box {
+  height: 230px;
+  margin-bottom: 90px;
+}
+@media (max-width: 1150px) {
+  .products-detail .container .tab-content .products-box {
+    height: 140px;
+    margin-bottom: 60px;
+  }
+}
+.products-detail .container .tab-content .products-box img {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+  margin-bottom: 15px;
+}
+
 .menu-trigger {
   position: relative;
   z-index: 10;
@@ -2009,6 +2083,9 @@ form:invalid button[type=submit] {
   z-index: 1000;
   transition: 1s;
 }
+.header .current-menu-item a {
+  color: #40c0c9 !important;
+}
 .header.active {
   background-color: #fff;
   opacity: 0.8;
@@ -2021,6 +2098,10 @@ form:invalid button[type=submit] {
   }
 }
 .header.active .nav_list .nav-link {
+  color: #364e68;
+  font-size: 16px;
+}
+.header.active .nav_list .products {
   color: #364e68;
   font-size: 16px;
 }
@@ -2112,6 +2193,7 @@ form:invalid button[type=submit] {
 .header nav .nav_list .flags:hover .sub-menu {
   visibility: visible;
   opacity: 1;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .header nav .nav_list .flags img {
   width: 30px;
@@ -2122,8 +2204,8 @@ form:invalid button[type=submit] {
 }
 .header nav .nav_list .flags i {
   color: #fff;
-  font-size: 20px;
   font-weight: bold;
+  margin-left: 3px;
 }
 .header nav .nav_list .flags .sub-menu {
   opacity: 0;
@@ -2152,6 +2234,53 @@ form:invalid button[type=submit] {
 .header nav .nav_list .flags .sub-menu li a:hover {
   color: #40c0c9;
 }
+.header nav .nav_list .products {
+  position: relative;
+  color: hsl(0deg, 0%, 100%);
+  font-weight: 700;
+  font-size: 16px;
+  padding: 8px 5px;
+  transition: 0.5s;
+}
+.header nav .nav_list .products.current-menu-item {
+  color: #40c0c9 !important;
+}
+.header nav .nav_list .products:hover {
+  color: #40c0c9;
+  cursor: pointer;
+}
+.header nav .nav_list .products:hover .sub-menu {
+  opacity: 1;
+  visibility: visible;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.header nav .nav_list .products i {
+  margin-left: 3px;
+}
+.header nav .nav_list .products .sub-menu {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 35px;
+  left: -10px;
+  background-color: #fff;
+  padding: 15px 30px;
+  border-radius: 5px;
+  z-index: 100;
+  min-width: 180px;
+  transition: visibility 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+.header nav .nav_list .products .sub-menu li:not(:last-child) {
+  margin-bottom: 20px;
+}
+.header nav .nav_list .products .sub-menu li a {
+  color: #364e68 !important;
+  font-weight: 500;
+  transition: 0.5s;
+}
+.header nav .nav_list .products .sub-menu li a:hover {
+  color: #40c0c9 !important;
+}
 @media (max-width: 992px) {
   .header nav .nav_list {
     flex-direction: column;
@@ -2170,6 +2299,12 @@ form:invalid button[type=submit] {
   font-weight: 700;
 }
 
+#header .nav_list .products {
+  color: #364e68;
+}
+#header .nav_list .products:hover {
+  color: #40c0c9;
+}
 #header .nav_list .nav-link {
   color: #364e68;
 }
@@ -2178,6 +2313,7 @@ form:invalid button[type=submit] {
 }
 #header .nav_list .flags i {
   color: #364e68;
+  margin-left: 3px;
 }
 #header .nav-toggle {
   color: #364e68;

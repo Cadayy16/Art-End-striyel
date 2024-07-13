@@ -1130,7 +1130,8 @@
       margin-bottom: 10px;
       color: $primary-color;
       font-size: 30px;
-      @media (max-width: 1150px){
+
+      @media (max-width: 1150px) {
         line-height: 43px;
       }
     }
@@ -1149,36 +1150,117 @@
     }
   }
 
-  
+
   h3 {
     color: $primary-color;
     font-size: 19px;
     margin-bottom: 20px;
   }
 
-  .blogList{
+  .blogList {
     margin-bottom: 30px;
     border-bottom: 1px solid $primary-color;
+
     .item {
       display: flex;
       gap: 20px;
       padding-bottom: 20px;
+
       .blog-picture {
         width: 120px;
         height: 90px;
-  
+
         img {
           width: 100%;
           height: 100%;
           border-radius: 10px;
         }
       }
-  
-      .blog-item-text{
-        h4{
+
+      .blog-item-text {
+        h4 {
           font-size: 17px;
           color: $black;
           line-height: 25px;
+        }
+      }
+    }
+  }
+}
+
+.products-detail {
+  padding: 100px 0;
+
+  .container {
+    max-width: 1600px;
+
+    .title {
+      margin-bottom: 50px;
+      text-align: center;
+
+      h4 {
+        font-size: 40px;
+        font-weight: bold;
+        color: $third-color;
+      }
+    }
+
+    .nav {
+      height: inherit;
+      margin-bottom: 50px;
+
+      &.nav-tabs {
+        border: none;
+        gap: 30px;
+        justify-content: center;
+
+        .nav-item {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-width: 250px;
+          @media (max-width: 1150px) {
+            min-width: inherit;
+            display: block;
+          }
+          .nav-link {
+            border: 1px solid $primary-color;
+            border-radius: 20px;
+            padding: 10px 45px;
+            color: #fff;
+            font-size: 16px;
+            transition: .5s;
+            margin-bottom: 20px;
+            background-color: $primary-color;
+
+            &.active {
+              background-color: $third-color;
+              border: 1px solid $third-color;
+            }
+
+            @media (max-width: 1150px) {
+              font-size: 12px;
+              margin-bottom: 20px;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+
+    .tab-content{
+      .products-box{
+        height: 230px;
+        margin-bottom: 90px;
+        @media (max-width: 1150px){
+          height: 140px;
+          margin-bottom: 60px;
+        }
+        img{
+          width: 100%;
+          object-fit: cover;
+          height: 100%;
+          margin-bottom: 15px;
         }
       }
     }
